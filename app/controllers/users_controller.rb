@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    # before_action :authorized, only: [:auto_login]
+    before_action :authorized, only: [:auto_login]
 
     # REGISTER
     def create
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     def login
       @user = User.find_by(name: params[:name])
       if @user && @user.authenticate(params[:password])
-        token = encode_token({user_id: @user.id})
+        token = encode_token({user_id: @user.id, password: params[:password]})
         render json: {user: @user, token: token}
       else
         render json: {error: "Invalid username or password"}
