@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
     skip_before_action :authorized
+
+
     def index
         posts = Post.all
         render json: {posts: posts}
@@ -13,7 +15,7 @@ class PostsController < ApplicationController
     private
   
     def post_params
-      params.permit(:content, :user_id)
+      params.permit(:content, :user_id, :username)
     end
 
 end

@@ -8,5 +8,5 @@
 
 u1 = User.create(username: "yak", password: "sample", age: 26, firstName: 'Jackson', lastNameInitial: 'B', location: 'My Home')
 
-p1 = Post.create(content: 'this is post!', user_id: u1.id)
-p2= Post.create(content: 'another post. Yuh.', user_id: u1.id)
+p1 = Post.create(content: 'this is post!', user_id: u1.id, username: 'Jackson B.')
+p2= Post.create(content: 'another post. Yuh.', user_id: u1.id, username: 'Jackson B.')
