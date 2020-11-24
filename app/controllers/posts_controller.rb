@@ -14,7 +14,11 @@ class PostsController < ApplicationController
 
     def create
         post = Post.create(post_params)
-        render json: {post: post}
+        if post.valid?
+            render json: {post: post}
+        else
+            render json: {error: post.errors.messages}
+        end
     end
 
     private
