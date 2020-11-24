@@ -21,6 +21,17 @@ class PostsController < ApplicationController
         end
     end
 
+    def update
+        @post = Post.find(params[:id])
+        @post.update(post_params)
+        if @post.valid?
+            render json: { post: @post}
+        else
+            render json: { error: 'failed to edit post' }, status: :not_acceptable
+        end
+    end
+
+
     private
   
     def post_params
