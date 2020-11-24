@@ -31,6 +31,15 @@ class PostsController < ApplicationController
         end
     end
 
+    def destroy
+        post = Post.find(params[:id])
+        post.likes.destroy_all
+        # plikes = Like.all.select {|l| l.post_id == post.id}
+        # plikes.destroy_all
+        post.destroy
+        render json: {message: 'post destroyed'}
+    end
+
 
     private
   
