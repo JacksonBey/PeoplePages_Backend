@@ -10,3 +10,6 @@ u1 = User.create(username: "yak", password: "sample", age: 26, firstName: 'Jacks
 
 p1 = Post.create(content: 'this is post!', user_id: u1.id, username: 'Jackson B.')
 p2= Post.create(content: 'another post. Yuh.', user_id: u1.id, username: 'Jackson B.')
+
+l1= Like.create(user_id: u1.id, post_id: p1.id)
+
