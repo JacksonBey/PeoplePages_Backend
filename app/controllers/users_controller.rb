@@ -4,8 +4,12 @@ class UsersController < ApplicationController
     # SHOW USERS
     def index
         users = User.all
-        render json: {users: users}
+        render json: {users: users} 
     end
+
+
+        # include: [:followers, :followed]
+        # render json: posts, include: [:likes]
 
     #SHOW USER
     def show
