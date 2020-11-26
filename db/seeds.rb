@@ -7,9 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 u1 = User.create(username: "yak", password: "sample", age: 26, firstName: 'Jackson', lastNameInitial: 'B', location: 'My Home')
+u2 = User.create(username: "jak", password: "123", age: 26, firstName: 'Billy', lastNameInitial: 'W', location: 'unknown')
 
 p1 = Post.create(content: 'this is post!', user_id: u1.id, username: 'Jackson B.')
 p2= Post.create(content: 'another post. Yuh.', user_id: u1.id, username: 'Jackson B.')
+p3= Post.create(content: 'masterwork post', user_id: u2.id, username: 'Billy W.')
 
 l1= Like.create(user_id: u1.id, post_id: p1.id)
-
+l2= Like.create(user_id: u1.id, post_id: p2.id)
+l3= Like.create(user_id: u2.id, post_id: p2.id)

@@ -9,6 +9,7 @@ class FriendshipsController < ApplicationController
 
     def create
         friendship = Friendship.create(friendship_params)
+        # debugger
         render json: {friendship: friendship}
     end
 
@@ -22,7 +23,7 @@ class FriendshipsController < ApplicationController
     private
   
     def friendship_params
-      params.permit(:follower_id, :followed_id)
+      params.permit(:follower_id, :followee_id, :friendship)
     end
     
 end

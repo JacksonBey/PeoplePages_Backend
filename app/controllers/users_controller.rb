@@ -4,9 +4,11 @@ class UsersController < ApplicationController
     # SHOW USERS
     def index
         users = User.all
-        render json: {users: users} 
+        # friendships = Friendship.all
+        # response = users, include: [:followers]
+        render json: users, include: [:followers, :followees]
     end
-
+    # render json: posts, include: [:likes]
 
         # include: [:followers, :followed]
         # render json: posts, include: [:likes]
@@ -14,8 +16,10 @@ class UsersController < ApplicationController
     #SHOW USER
     def show
         user = User.find(params[:id])
-        render json: {user: user}
+        friendships = user.followers + user.followees
+        render json: {user: user, friendships: friendships}
     end
+    # render json: {post: post, likes: post.likes}
 
     # REGISTER
     def create
