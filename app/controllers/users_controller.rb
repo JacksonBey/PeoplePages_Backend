@@ -4,8 +4,8 @@ class UsersController < ApplicationController
     # SHOW USERS
     def index
         users = User.all
-        # friendships = Friendship.all
-        # response = users, include: [:followers]
+        friendships = Friendship.all
+        # render json: {users, include: [:followers, :followees], :friendships => friendships}
         render json: users, include: [:followers, :followees]
     end
     # render json: posts, include: [:likes]
