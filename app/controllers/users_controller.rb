@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         users = User.all
         friendships = Friendship.all
         # render json: {users, include: [:followers, :followees], :friendships => friendships}
-        render json: users, include: [:followers, :followees]
+        render json: users, include: [:followers, :followees, :notifications]
     end
     # render json: posts, include: [:likes]
 

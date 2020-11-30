@@ -14,5 +14,11 @@ p2= Post.create(content: 'another post. Yuh.', user_id: u1.id, username: 'Jackso
 p3= Post.create(content: 'masterwork post', user_id: u2.id, username: 'Billy W.')
 
 l1= Like.create(user_id: u1.id, post_id: p1.id)
+n1 = Notification.create(user_id: u1.id, reason: 'You liked your Post!', post_id: p1.id)
 l2= Like.create(user_id: u1.id, post_id: p2.id)
+n2 = Notification.create(user_id: u1.id, reason: 'You liked your Post!', post_id: p2.id)
 l3= Like.create(user_id: u2.id, post_id: p2.id)
+n3 = Notification.create(user_id: u1.id, reason: 'Billy liked your Post!', post_id: p1.id)
+n4 = Notification.create(user_id: u1.id, reason: 'Billy liked your Post!', post_id: p1.id)
+n5 = Notification.create(user_id: u1.id, reason: 'Billy liked your Post!', post_id: p1.id)
+n6 = Notification.create(user_id: u1.id, reason: 'Billy liked your Post!', post_id: p1.id)
