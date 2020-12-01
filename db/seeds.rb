@@ -13,6 +13,11 @@ p1 = Post.create(content: 'this is post!', user_id: u1.id, username: 'Jackson B.
 p2= Post.create(content: 'another post. Yuh.', user_id: u1.id, username: 'Jackson B.')
 p3= Post.create(content: 'masterwork post', user_id: u2.id, username: 'Billy W.')
 
+c1= Comment.create(content: 'insightful.', username:'Billy W.',  user_id: u2.id, post_id: p1.id)
+l5= Like.create(user_id: u1.id, comment_id: c1.id)
+c2= Comment.create(content: 'I really like this!', username:'Billy W.', user_id: u2.id, post_id: p1.id)
+c3= Comment.create(content: 'I M M E N S E', username:'Jackson B.', user_id: u1.id, post_id: p3.id)
+
 l1= Like.create(user_id: u1.id, post_id: p1.id)
 n1 = Notification.create(user_id: u1.id, reason: 'You liked your Post!', post_id: p1.id)
 l2= Like.create(user_id: u1.id, post_id: p2.id)

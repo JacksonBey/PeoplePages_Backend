@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+    skip_before_action :authorized
 
     def index
         comments = Comment.all
@@ -37,5 +37,11 @@ class CommentsController < ApplicationController
         # plikes.destroy_all
         comment.destroy
         render json: {message: 'comment destroyed'}
+    end
+
+    private
+  
+    def comment_params
+      params.permit(:content, :user_id, :username, :post_id)
     end
 end
