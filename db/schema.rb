@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_185638) do
 
   create_table "likes", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "post_id", null: false
+    t.bigint "post_id"
     t.integer "comment_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_185638) do
   create_table "posts", force: :cascade do |t|
     t.string "content"
     t.string "username"
+    t.string "image"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
