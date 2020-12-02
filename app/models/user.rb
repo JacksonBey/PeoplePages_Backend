@@ -7,8 +7,8 @@ class User < ApplicationRecord
     has_many :followers, through: :following_users
     has_many :notifications
 
-    # has_many :posts
-    # has_many :likes, through :posts
+    has_many :posts
+    has_many :likes, through: :posts
 
 
     validates :username, uniqueness: true
