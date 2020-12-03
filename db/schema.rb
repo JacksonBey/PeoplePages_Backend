@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_185638) do
     t.integer "followee_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "pending"
   end
 
   create_table "likes", force: :cascade do |t|

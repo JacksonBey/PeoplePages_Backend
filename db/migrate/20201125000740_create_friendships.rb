@@ -4,6 +4,7 @@ class CreateFriendships < ActiveRecord::Migration[6.0]
       t.integer :follower_id
       t.integer :followee_id
       t.timestamps
+      t.boolean :pending
     end
   end
 end

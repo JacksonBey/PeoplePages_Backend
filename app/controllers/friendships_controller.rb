@@ -18,12 +18,18 @@ class FriendshipsController < ApplicationController
 
         friendship.destroy
         render json: {message: 'friendship destroyed'}
-      end
+    end
+
+    def update
+        @friendship = Friendship.find(params[:id])
+        @friendship.update(friendship_params)
+        render json: { friendship: @friendship}
+    end
 
     private
   
     def friendship_params
-      params.permit(:follower_id, :followee_id, :friendship)
+      params.permit(:follower_id, :followee_id, :friendship, :pending)
     end
     
 end
