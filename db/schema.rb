@@ -66,6 +66,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_185638) do
     t.string "lastNameInitial"
     t.string "username"
     t.string "password_digest"
+    t.string "profilePic"
     t.integer "age"
     t.string "location"
     t.datetime "created_at", precision: 6, null: false

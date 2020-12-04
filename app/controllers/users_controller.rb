@@ -63,11 +63,11 @@ class UsersController < ApplicationController
     private
   
     def user_params
-      params.permit(:username, :password, :age, :firstName, :lastNameInitial)
+      params.permit(:username, :profilePic, :password, :age, :firstName, :lastNameInitial)
     end
 
     def edit_params
-        params.permit(:age, :firstName, :lastNameInitial, :location)
+        params.permit(:age, :location)
     end
   
 end
