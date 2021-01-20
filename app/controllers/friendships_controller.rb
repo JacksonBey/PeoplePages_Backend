@@ -9,7 +9,6 @@ class FriendshipsController < ApplicationController
 
     def create
         friendship = Friendship.create(friendship_params)
-        # debugger
         render json: {friendship: friendship}
     end
 
